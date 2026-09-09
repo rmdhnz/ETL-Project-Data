@@ -34,11 +34,7 @@ class Settings(BaseSettings):
 
     @property
     def redis_url(self) -> str:
-        return (
-            f"redis://"
-            f"{self.redis_host}:{self.redis_port}"
-            f"/{self.redis_db}"
-        )
+        return f"redis://{self.redis_host}:{self.redis_port}/{self.redis_db}"
 
 
 @lru_cache

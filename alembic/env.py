@@ -6,15 +6,21 @@ from sqlalchemy import pool
 import sys
 from pathlib import Path
 
-sys.path.insert(
-    0,
-    str(Path(__file__).resolve().parents[1]/"src")
-)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from alembic import context
 from etl.database.base import Base
 from etl.config.settings import get_settings
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
+from etl.database.models import (
+    Category,
+    Customer,
+    OrderItem,
+    Order,
+    Payment,
+    Product
+)
+
 settings = get_settings()
 
 # this is the Alembic Config object, which provides
@@ -84,9 +90,7 @@ def run_migrations_online() -> None:
     )
 
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
             context.run_migrations()
