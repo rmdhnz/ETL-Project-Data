@@ -6,7 +6,13 @@ from etl.database.models.source import (
     Payment,
     Product,
 )
-
+from etl.database.models.warehouse import (
+    DimCategory,
+    DimCustomer,
+    DimDate,
+    DimProduct,
+    FactSales,
+)
 __all__ = [
     "Category",
     "Customer",
@@ -14,4 +20,9 @@ __all__ = [
     "OrderItem",
     "Payment",
     "Product",
+    "DimCategory",
+    "DimCustomer",
+    "DimDate",
+    "DimProduct",
+    "FactSales",
 ]
