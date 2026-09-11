@@ -12,5 +12,6 @@ def main():
     for table in inspector.get_table_names(schema="warehouse"):
         print(f"  - {table}")
 
-if __name__ == '__main__' : 
-  main()
+
+if __name__ == "__main__":
+    main()
