@@ -5,6 +5,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 
 from etl.database.base import Base
 
+
 class Customer(Base):
     __tablename__ = "customers"
     __table_args__ = {"schema": "source"}

@@ -13,6 +13,7 @@ from etl.database.models.warehouse import (
     DimProduct,
     FactSales,
 )
+
 __all__ = [
     "Category",
     "Customer",
